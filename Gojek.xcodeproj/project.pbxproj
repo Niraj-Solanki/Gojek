@@ -18,6 +18,12 @@
 		49671702251E574100DC4F42 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671701251E574100DC4F42 /* HomeViewController.swift */; };
 		49671703251E574100DC4F42 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671701251E574100DC4F42 /* HomeViewController.swift */; };
 		49671704251E574100DC4F42 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671701251E574100DC4F42 /* HomeViewController.swift */; };
+		49671708251E5EA800DC4F42 /* RepoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671706251E5EA800DC4F42 /* RepoTableCell.swift */; };
+		49671709251E5EA800DC4F42 /* RepoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671706251E5EA800DC4F42 /* RepoTableCell.swift */; };
+		4967170A251E5EA800DC4F42 /* RepoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671706251E5EA800DC4F42 /* RepoTableCell.swift */; };
+		4967170B251E5EA800DC4F42 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49671707251E5EA800DC4F42 /* RepoTableCell.xib */; };
+		4967170C251E5EA800DC4F42 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49671707251E5EA800DC4F42 /* RepoTableCell.xib */; };
+		4967170D251E5EA800DC4F42 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49671707251E5EA800DC4F42 /* RepoTableCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,8 @@
 		496716EF251DCFEF00DC4F42 /* GojekUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GojekUITests.swift; sourceTree = "<group>"; };
 		496716F1251DCFEF00DC4F42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49671701251E574100DC4F42 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		49671706251E5EA800DC4F42 /* RepoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableCell.swift; sourceTree = "<group>"; };
+		49671707251E5EA800DC4F42 /* RepoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +111,7 @@
 		496716C9251DCFED00DC4F42 /* Gojek */ = {
 			isa = PBXGroup;
 			children = (
+				49671705251E5E8500DC4F42 /* Table Cell */,
 				496716FF251E52D500DC4F42 /* Model */,
 				496716FD251E52BD00DC4F42 /* View */,
 				496716FE251E52CD00DC4F42 /* ViewModel */,
@@ -163,6 +172,15 @@
 				49671701251E574100DC4F42 /* HomeViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		49671705251E5E8500DC4F42 /* Table Cell */ = {
+			isa = PBXGroup;
+			children = (
+				49671706251E5EA800DC4F42 /* RepoTableCell.swift */,
+				49671707251E5EA800DC4F42 /* RepoTableCell.xib */,
+			);
+			path = "Table Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4967170B251E5EA800DC4F42 /* RepoTableCell.xib in Resources */,
 				496716DA251DCFEE00DC4F42 /* LaunchScreen.storyboard in Resources */,
 				496716D7251DCFEE00DC4F42 /* Assets.xcassets in Resources */,
 				496716D2251DCFED00DC4F42 /* Main.storyboard in Resources */,
@@ -279,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4967170C251E5EA800DC4F42 /* RepoTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4967170D251E5EA800DC4F42 /* RepoTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49671708251E5EA800DC4F42 /* RepoTableCell.swift in Sources */,
 				49671702251E574100DC4F42 /* HomeViewController.swift in Sources */,
 				496716CB251DCFED00DC4F42 /* AppDelegate.swift in Sources */,
 				496716D5251DCFED00DC4F42 /* Gojek.xcdatamodeld in Sources */,
@@ -308,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				496716E5251DCFEF00DC4F42 /* GojekTests.swift in Sources */,
+				49671709251E5EA800DC4F42 /* RepoTableCell.swift in Sources */,
 				49671703251E574100DC4F42 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				496716F0251DCFEF00DC4F42 /* GojekUITests.swift in Sources */,
+				4967170A251E5EA800DC4F42 /* RepoTableCell.swift in Sources */,
 				49671704251E574100DC4F42 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
