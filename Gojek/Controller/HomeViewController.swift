@@ -9,11 +9,12 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     // MARK: - Outlets
     @IBOutlet weak var repoTableView: UITableView!
     
     // MARK: - Objetcs
+    let viewModel = HomeViewModel()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -25,6 +26,19 @@ class HomeViewController: UIViewController {
     func initializeVariables() {
         let nib = UINib.init(nibName: "RepoTableCell", bundle: nil)
         repoTableView.register(nib, forCellReuseIdentifier: "RepoTableCell")
+        
+        viewModel.observerBlock = { (state) in
+            switch state {
+            case .dataLoaded:
+                DispatchQueue.main.async {
+                    self.repoTableView.reloadData()
+                }
+            case .dataLoading:
+                print("Data Loading")
+            default:
+                print("Default")
+            }
+        }
     }
     
 }
@@ -32,11 +46,12 @@ class HomeViewController: UIViewController {
 extension HomeViewController : UITableViewDelegate,UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let repoCell = tableView.dequeueReusableCell(withIdentifier: "RepoTableCell", for: indexPath) as! RepoTableCell
+        repoCell.configureCell(viewModel: RepoCellViewModel.init(model: viewModel.items[indexPath.row]))
         return repoCell
     }
 }

@@ -25,6 +25,9 @@
 		4967170C251E5EA800DC4F42 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49671707251E5EA800DC4F42 /* RepoTableCell.xib */; };
 		4967170D251E5EA800DC4F42 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49671707251E5EA800DC4F42 /* RepoTableCell.xib */; };
 		4967170F251E6BA400DC4F42 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967170E251E6BA400DC4F42 /* RepositoryModel.swift */; };
+		49671713251E748300DC4F42 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671712251E748300DC4F42 /* HomeViewModel.swift */; };
+		49671716251E7D3600DC4F42 /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671715251E7D3600DC4F42 /* ObservableType.swift */; };
+		49671718251E7F7C00DC4F42 /* RepoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671717251E7F7C00DC4F42 /* RepoCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		49671706251E5EA800DC4F42 /* RepoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableCell.swift; sourceTree = "<group>"; };
 		49671707251E5EA800DC4F42 /* RepoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableCell.xib; sourceTree = "<group>"; };
 		4967170E251E6BA400DC4F42 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		49671712251E748300DC4F42 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		49671715251E7D3600DC4F42 /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
+		49671717251E7F7C00DC4F42 /* RepoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 		496716C9251DCFED00DC4F42 /* Gojek */ = {
 			isa = PBXGroup;
 			children = (
+				49671714251E7D2500DC4F42 /* Observable */,
 				49671705251E5E8500DC4F42 /* Table Cell */,
 				496716FF251E52D500DC4F42 /* Model */,
 				496716FD251E52BD00DC4F42 /* View */,
@@ -157,6 +164,7 @@
 		496716FE251E52CD00DC4F42 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				49671712251E748300DC4F42 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -182,8 +190,17 @@
 			children = (
 				49671706251E5EA800DC4F42 /* RepoTableCell.swift */,
 				49671707251E5EA800DC4F42 /* RepoTableCell.xib */,
+				49671717251E7F7C00DC4F42 /* RepoCellViewModel.swift */,
 			);
 			path = "Table Cell";
+			sourceTree = "<group>";
+		};
+		49671714251E7D2500DC4F42 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				49671715251E7D3600DC4F42 /* ObservableType.swift */,
+			);
+			path = Observable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,11 +337,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49671718251E7F7C00DC4F42 /* RepoCellViewModel.swift in Sources */,
 				4967170F251E6BA400DC4F42 /* RepositoryModel.swift in Sources */,
 				49671708251E5EA800DC4F42 /* RepoTableCell.swift in Sources */,
+				49671713251E748300DC4F42 /* HomeViewModel.swift in Sources */,
 				49671702251E574100DC4F42 /* HomeViewController.swift in Sources */,
 				496716CB251DCFED00DC4F42 /* AppDelegate.swift in Sources */,
 				496716D5251DCFED00DC4F42 /* Gojek.xcdatamodeld in Sources */,
+				49671716251E7D3600DC4F42 /* ObservableType.swift in Sources */,
 				496716CD251DCFED00DC4F42 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
