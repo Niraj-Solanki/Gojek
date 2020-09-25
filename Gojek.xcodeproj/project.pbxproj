@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		496716CB251DCFED00DC4F42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496716CA251DCFED00DC4F42 /* AppDelegate.swift */; };
 		496716CD251DCFED00DC4F42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496716CC251DCFED00DC4F42 /* SceneDelegate.swift */; };
-		496716CF251DCFED00DC4F42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496716CE251DCFED00DC4F42 /* ViewController.swift */; };
 		496716D2251DCFED00DC4F42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496716D0251DCFED00DC4F42 /* Main.storyboard */; };
 		496716D5251DCFED00DC4F42 /* Gojek.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 496716D3251DCFED00DC4F42 /* Gojek.xcdatamodeld */; };
 		496716D7251DCFEE00DC4F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496716D6251DCFEE00DC4F42 /* Assets.xcassets */; };
 		496716DA251DCFEE00DC4F42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496716D8251DCFEE00DC4F42 /* LaunchScreen.storyboard */; };
 		496716E5251DCFEF00DC4F42 /* GojekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496716E4251DCFEF00DC4F42 /* GojekTests.swift */; };
 		496716F0251DCFEF00DC4F42 /* GojekUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496716EF251DCFEF00DC4F42 /* GojekUITests.swift */; };
+		49671702251E574100DC4F42 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671701251E574100DC4F42 /* HomeViewController.swift */; };
+		49671703251E574100DC4F42 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671701251E574100DC4F42 /* HomeViewController.swift */; };
+		49671704251E574100DC4F42 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671701251E574100DC4F42 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,6 @@
 		496716C7251DCFED00DC4F42 /* Gojek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gojek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496716CA251DCFED00DC4F42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		496716CC251DCFED00DC4F42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		496716CE251DCFED00DC4F42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		496716D1251DCFED00DC4F42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		496716D4251DCFED00DC4F42 /* Gojek.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gojek.xcdatamodel; sourceTree = "<group>"; };
 		496716D6251DCFEE00DC4F42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		496716EB251DCFEF00DC4F42 /* GojekUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GojekUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		496716EF251DCFEF00DC4F42 /* GojekUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GojekUITests.swift; sourceTree = "<group>"; };
 		496716F1251DCFEF00DC4F42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49671701251E574100DC4F42 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +103,12 @@
 		496716C9251DCFED00DC4F42 /* Gojek */ = {
 			isa = PBXGroup;
 			children = (
+				496716FF251E52D500DC4F42 /* Model */,
+				496716FD251E52BD00DC4F42 /* View */,
+				496716FE251E52CD00DC4F42 /* ViewModel */,
+				49671700251E530D00DC4F42 /* Controller */,
 				496716CA251DCFED00DC4F42 /* AppDelegate.swift */,
 				496716CC251DCFED00DC4F42 /* SceneDelegate.swift */,
-				496716CE251DCFED00DC4F42 /* ViewController.swift */,
 				496716D0251DCFED00DC4F42 /* Main.storyboard */,
 				496716D6251DCFEE00DC4F42 /* Assets.xcassets */,
 				496716D8251DCFEE00DC4F42 /* LaunchScreen.storyboard */,
@@ -129,6 +134,35 @@
 				496716F1251DCFEF00DC4F42 /* Info.plist */,
 			);
 			path = GojekUITests;
+			sourceTree = "<group>";
+		};
+		496716FD251E52BD00DC4F42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		496716FE251E52CD00DC4F42 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		496716FF251E52D500DC4F42 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		49671700251E530D00DC4F42 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49671701251E574100DC4F42 /* HomeViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				496716CF251DCFED00DC4F42 /* ViewController.swift in Sources */,
+				49671702251E574100DC4F42 /* HomeViewController.swift in Sources */,
 				496716CB251DCFED00DC4F42 /* AppDelegate.swift in Sources */,
 				496716D5251DCFED00DC4F42 /* Gojek.xcdatamodeld in Sources */,
 				496716CD251DCFED00DC4F42 /* SceneDelegate.swift in Sources */,
@@ -274,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				496716E5251DCFEF00DC4F42 /* GojekTests.swift in Sources */,
+				49671703251E574100DC4F42 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				496716F0251DCFEF00DC4F42 /* GojekUITests.swift in Sources */,
+				49671704251E574100DC4F42 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
