@@ -24,6 +24,7 @@
 		4967170B251E5EA800DC4F42 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49671707251E5EA800DC4F42 /* RepoTableCell.xib */; };
 		4967170C251E5EA800DC4F42 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49671707251E5EA800DC4F42 /* RepoTableCell.xib */; };
 		4967170D251E5EA800DC4F42 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49671707251E5EA800DC4F42 /* RepoTableCell.xib */; };
+		4967170F251E6BA400DC4F42 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967170E251E6BA400DC4F42 /* RepositoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		49671701251E574100DC4F42 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		49671706251E5EA800DC4F42 /* RepoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableCell.swift; sourceTree = "<group>"; };
 		49671707251E5EA800DC4F42 /* RepoTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableCell.xib; sourceTree = "<group>"; };
+		4967170E251E6BA400DC4F42 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 		496716FF251E52D500DC4F42 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4967170E251E6BA400DC4F42 /* RepositoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4967170F251E6BA400DC4F42 /* RepositoryModel.swift in Sources */,
 				49671708251E5EA800DC4F42 /* RepoTableCell.swift in Sources */,
 				49671702251E574100DC4F42 /* HomeViewController.swift in Sources */,
 				496716CB251DCFED00DC4F42 /* AppDelegate.swift in Sources */,
