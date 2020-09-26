@@ -135,9 +135,7 @@
 				49671700251E530D00DC4F42 /* Controller */,
 				496716CA251DCFED00DC4F42 /* AppDelegate.swift */,
 				496716CC251DCFED00DC4F42 /* SceneDelegate.swift */,
-				496716D0251DCFED00DC4F42 /* Main.storyboard */,
 				496716D6251DCFEE00DC4F42 /* Assets.xcassets */,
-				496716D8251DCFEE00DC4F42 /* LaunchScreen.storyboard */,
 				496716DB251DCFEE00DC4F42 /* Info.plist */,
 				496716D3251DCFED00DC4F42 /* Gojek.xcdatamodeld */,
 			);
@@ -165,6 +163,8 @@
 		496716FD251E52BD00DC4F42 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				496716D8251DCFEE00DC4F42 /* LaunchScreen.storyboard */,
+				496716D0251DCFED00DC4F42 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";

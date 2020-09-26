@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     
     // MARK: - Objetcs
     let viewModel = HomeViewModel()
+    var refreshControl = UIRefreshControl()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
@@ -25,15 +26,26 @@ class HomeViewController: UIViewController {
     // MARK: - Custom Methods
     func initializeVariables() {
         repoTableView.register(viewModel.nib, forCellReuseIdentifier: viewModel.reusableIdentifier)
+        
+        refreshControl.attributedTitle = viewModel.refreshTitle
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        repoTableView.refreshControl = refreshControl
+        
         bindingSetup()
+    }
+     
+    @objc func refresh(_ sender: AnyObject) {
+       // Code to refresh table view
+        viewModel.foorceUpdate()
     }
     
     func bindingSetup() {
-        viewModel.observerBlock = { (state) in
+        viewModel.observerBlock = {  [weak self] (state) in
             switch state {
             case .dataLoaded:
                 DispatchQueue.main.async {
-                    self.repoTableView.reloadData()
+                    self?.refreshControl.endRefreshing()
+                    self?.repoTableView.reloadData()
                 }
             case .dataLoading:
                 print("Data Loading")

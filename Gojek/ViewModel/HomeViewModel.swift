@@ -37,6 +37,15 @@ class HomeViewModel : NSObject{
         return []
     }
     
+    var refreshTitle:NSAttributedString {
+        return NSAttributedString(string: "Pull to refresh")
+    }
+    
+    
+    func foorceUpdate() {
+        repoAPI()
+    }
+    
     //MARK:- API Work
     func repoAPI() {
         let urlString = "https://ghapi.huchen.dev/repositories"

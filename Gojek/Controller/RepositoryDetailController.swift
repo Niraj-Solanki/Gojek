@@ -43,8 +43,13 @@ class RepositoryDetailController: UIViewController {
         title = viewModel?.controllerTitle
         
         starForkView.layer.borderColor = UIColor.gray.cgColor
-        starForkView.layer.borderWidth =  1
+        starForkView.layer.borderWidth =  0.5
         starForkView.layer.cornerRadius = 5
+        
+        userImageView.layer.borderColor = UIColor.gray.cgColor
+        userImageView.layer.borderWidth =  0.3
+        userImageView.layer.cornerRadius = userImageView.layer.frame.size.height / 2
+        userImageView.clipsToBounds = true
     }
     
     func configureViewModel(model:RepositoryModel) {
