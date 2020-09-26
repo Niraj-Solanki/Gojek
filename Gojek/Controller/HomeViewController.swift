@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
      
     @objc func refresh(_ sender: AnyObject) {
        // Code to refresh table view
-        viewModel.foorceUpdate()
+        viewModel.forceUpdate()
     }
     
     func bindingSetup() {

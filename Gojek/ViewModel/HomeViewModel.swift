@@ -16,6 +16,8 @@ class HomeViewModel : NSObject{
         }
     }
     
+    private var isApiRunning = false
+    
     var nib:UINib{
      return UINib.init(nibName: "RepoTableCell", bundle: nil)
     }
@@ -41,26 +43,31 @@ class HomeViewModel : NSObject{
         return NSAttributedString(string: "Pull to refresh")
     }
     
-    
-    func foorceUpdate() {
+    func forceUpdate() {
         repoAPI()
     }
     
     //MARK:- API Work
     func repoAPI() {
+        
+        if isApiRunning {
+            return
+        }
+        
         let urlString = "https://ghapi.huchen.dev/repositories"
         if let url = URL.init(string: urlString) {
             observerBlock?(.dataLoading)
-            let downloadTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
-                
-                guard let data = data else { self.observerBlock?(.dataFailed); return }
+            isApiRunning = true
+            let downloadTask = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
+                self?.isApiRunning = false
+                guard let data = data else { self?.observerBlock?(.dataFailed); return }
                 
                 let jsonDecoder = JSONDecoder()
                 do {
-                    self.repositories = try jsonDecoder.decode([RepositoryModel].self, from: data)
+                    self?.repositories = try jsonDecoder.decode([RepositoryModel].self, from: data)
                 } catch {
                     print(error.localizedDescription)
-                    self.observerBlock?(.dataFailed)
+                    self?.observerBlock?(.dataFailed)
                 }
             }
             downloadTask.resume()
