@@ -16,6 +16,14 @@ class HomeViewModel : NSObject{
         }
     }
     
+    var nib:UINib{
+     return UINib.init(nibName: "RepoTableCell", bundle: nil)
+    }
+    
+    var reusableIdentifier:String{
+        return "RepoTableCell"
+    }
+    
     var items:[RepositoryModel]{
         if let repositories = repositories {
             return repositories

@@ -24,9 +24,11 @@ class HomeViewController: UIViewController {
     
     // MARK: - Custom Methods
     func initializeVariables() {
-        let nib = UINib.init(nibName: "RepoTableCell", bundle: nil)
-        repoTableView.register(nib, forCellReuseIdentifier: "RepoTableCell")
-        
+        repoTableView.register(viewModel.nib, forCellReuseIdentifier: viewModel.reusableIdentifier)
+        bindingSetup()
+    }
+    
+    func bindingSetup() {
         viewModel.observerBlock = { (state) in
             switch state {
             case .dataLoaded:
@@ -50,7 +52,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let repoCell = tableView.dequeueReusableCell(withIdentifier: "RepoTableCell", for: indexPath) as! RepoTableCell
+        let repoCell = tableView.dequeueReusableCell(withIdentifier: viewModel.reusableIdentifier, for: indexPath) as! RepoTableCell
         repoCell.configureCell(viewModel: RepoCellViewModel.init(model: viewModel.items[indexPath.row]))
         return repoCell
     }

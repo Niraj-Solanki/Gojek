@@ -40,8 +40,8 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <inset key="separatorInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="yTX-8V-7aH"/>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="rjH-ZO-8lH"/>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="QKi-0w-kKo"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="ODF-eH-cyu"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
