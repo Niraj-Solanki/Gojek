@@ -56,4 +56,10 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource
         repoCell.configureCell(viewModel: RepoCellViewModel.init(model: viewModel.items[indexPath.row]))
         return repoCell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let repoositoryDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "RepositoryDetailController") as! RepositoryDetailController
+        repoositoryDetailVC.configureViewModel(model: viewModel.items[indexPath.row])
+        navigationController?.pushViewController(repoositoryDetailVC, animated: true)
+    }
 }
