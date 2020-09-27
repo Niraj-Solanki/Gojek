@@ -41,6 +41,7 @@
 		49832C272520FE400037218B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C262520FE400037218B /* Constants.swift */; };
 		49832C2A2520FEC20037218B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C292520FEC20037218B /* Extensions.swift */; };
 		49832C2C2520FF0B0037218B /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C2B2520FF0B0037218B /* ServerError.swift */; };
+		49832C2F2521005F0037218B /* GitRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C2E2521005F0037218B /* GitRepositories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		49832C262520FE400037218B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		49832C292520FEC20037218B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		49832C2B2520FF0B0037218B /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
+		49832C2E2521005F0037218B /* GitRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 		49832C1F2520FCE20037218B /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
+				49832C2D2521003E0037218B /* EndPoint */,
 				49832C202520FD1E0037218B /* RequestProtocol.swift */,
 				49832C222520FD710037218B /* NetworkManager.swift */,
 				49832C242520FDA80037218B /* GJError.swift */,
@@ -273,6 +276,14 @@
 				49832C292520FEC20037218B /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		49832C2D2521003E0037218B /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				49832C2E2521005F0037218B /* GitRepositories.swift */,
+			);
+			path = EndPoint;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,6 +434,7 @@
 				49671713251E748300DC4F42 /* HomeViewModel.swift in Sources */,
 				49832C1B2520B7ED0037218B /* Repository+CoreDataProperties.swift in Sources */,
 				49832C1A2520B7ED0037218B /* Repository+CoreDataClass.swift in Sources */,
+				49832C2F2521005F0037218B /* GitRepositories.swift in Sources */,
 				4967171F251F4F4300DC4F42 /* RepositoryDetailViewModel.swift in Sources */,
 				49671702251E574100DC4F42 /* HomeViewController.swift in Sources */,
 				496716CB251DCFED00DC4F42 /* AppDelegate.swift in Sources */,
