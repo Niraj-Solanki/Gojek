@@ -10,7 +10,6 @@
 		496716CB251DCFED00DC4F42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496716CA251DCFED00DC4F42 /* AppDelegate.swift */; };
 		496716CD251DCFED00DC4F42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496716CC251DCFED00DC4F42 /* SceneDelegate.swift */; };
 		496716D2251DCFED00DC4F42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496716D0251DCFED00DC4F42 /* Main.storyboard */; };
-		496716D5251DCFED00DC4F42 /* Gojek.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 496716D3251DCFED00DC4F42 /* Gojek.xcdatamodeld */; };
 		496716D7251DCFEE00DC4F42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496716D6251DCFEE00DC4F42 /* Assets.xcassets */; };
 		496716DA251DCFEE00DC4F42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 496716D8251DCFEE00DC4F42 /* LaunchScreen.storyboard */; };
 		496716E5251DCFEF00DC4F42 /* GojekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496716E4251DCFEF00DC4F42 /* GojekTests.swift */; };
@@ -31,6 +30,10 @@
 		4967171A251F2FC600DC4F42 /* RepositoryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671719251F2FC600DC4F42 /* RepositoryDetailController.swift */; };
 		4967171D251F34D100DC4F42 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4967171C251F34D100DC4F42 /* WebKit.framework */; };
 		4967171F251F4F4300DC4F42 /* RepositoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4967171E251F4F4300DC4F42 /* RepositoryDetailViewModel.swift */; };
+		49671726252099DA00DC4F42 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671725252099DA00DC4F42 /* DataManager.swift */; };
+		49832C0B25209CDA0037218B /* Gojek.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 496716D3251DCFED00DC4F42 /* Gojek.xcdatamodeld */; };
+		49832C1A2520B7ED0037218B /* Repository+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C182520B7ED0037218B /* Repository+CoreDataClass.swift */; };
+		49832C1B2520B7ED0037218B /* Repository+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C192520B7ED0037218B /* Repository+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		49671719251F2FC600DC4F42 /* RepositoryDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailController.swift; sourceTree = "<group>"; };
 		4967171C251F34D100DC4F42 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		4967171E251F4F4300DC4F42 /* RepositoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewModel.swift; sourceTree = "<group>"; };
+		49671725252099DA00DC4F42 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		49832C182520B7ED0037218B /* Repository+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+CoreDataClass.swift"; sourceTree = "<group>"; };
+		49832C192520B7ED0037218B /* Repository+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Repository+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +133,7 @@
 		496716C9251DCFED00DC4F42 /* Gojek */ = {
 			isa = PBXGroup;
 			children = (
+				496717242520943900DC4F42 /* CoreDataStack */,
 				49671714251E7D2500DC4F42 /* Observable */,
 				49671705251E5E8500DC4F42 /* Table Cell */,
 				496716FF251E52D500DC4F42 /* Model */,
@@ -219,6 +226,16 @@
 				4967171C251F34D100DC4F42 /* WebKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		496717242520943900DC4F42 /* CoreDataStack */ = {
+			isa = PBXGroup;
+			children = (
+				49832C182520B7ED0037218B /* Repository+CoreDataClass.swift */,
+				49832C192520B7ED0037218B /* Repository+CoreDataProperties.swift */,
+				49671725252099DA00DC4F42 /* DataManager.swift */,
+			);
+			path = CoreDataStack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49832C0B25209CDA0037218B /* Gojek.xcdatamodeld in Resources */,
 				4967170B251E5EA800DC4F42 /* RepoTableCell.xib in Resources */,
 				496716DA251DCFEE00DC4F42 /* LaunchScreen.storyboard in Resources */,
 				496716D7251DCFEE00DC4F42 /* Assets.xcassets in Resources */,
@@ -358,12 +376,14 @@
 				49671718251E7F7C00DC4F42 /* RepoCellViewModel.swift in Sources */,
 				4967170F251E6BA400DC4F42 /* RepositoryModel.swift in Sources */,
 				4967171A251F2FC600DC4F42 /* RepositoryDetailController.swift in Sources */,
+				49671726252099DA00DC4F42 /* DataManager.swift in Sources */,
 				49671708251E5EA800DC4F42 /* RepoTableCell.swift in Sources */,
 				49671713251E748300DC4F42 /* HomeViewModel.swift in Sources */,
+				49832C1B2520B7ED0037218B /* Repository+CoreDataProperties.swift in Sources */,
+				49832C1A2520B7ED0037218B /* Repository+CoreDataClass.swift in Sources */,
 				4967171F251F4F4300DC4F42 /* RepositoryDetailViewModel.swift in Sources */,
 				49671702251E574100DC4F42 /* HomeViewController.swift in Sources */,
 				496716CB251DCFED00DC4F42 /* AppDelegate.swift in Sources */,
-				496716D5251DCFED00DC4F42 /* Gojek.xcdatamodeld in Sources */,
 				49671716251E7D3600DC4F42 /* ObservableType.swift in Sources */,
 				496716CD251DCFED00DC4F42 /* SceneDelegate.swift in Sources */,
 			);
@@ -474,7 +494,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -528,7 +548,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -581,7 +601,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GojekTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,7 +622,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = GojekTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -47,8 +47,8 @@ class HomeViewController: UIViewController {
                     self?.refreshControl.endRefreshing()
                     self?.repoTableView.reloadData()
                 }
-            case .dataLoading:
-                print("Data Loading")
+            case .dataFailed:
+                print("Data Failed")
             default:
                 print("Default")
             }

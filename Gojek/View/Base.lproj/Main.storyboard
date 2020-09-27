@@ -66,7 +66,6 @@
                     <navigationItem key="navigationItem" title="Github Trends" id="SZX-tC-OhT"/>
                     <connections>
                         <outlet property="repoTableView" destination="cvq-Bn-9Pb" id="45I-T9-1fH"/>
-                        <segue destination="NpX-Wq-l21" kind="show" id="L7c-4c-IRn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -82,7 +81,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dpP-F3-hQE" userLabel="mainView">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9u-XO-TWC" userLabel="detailView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="239"/>
@@ -190,7 +189,7 @@ asdajsda</string>
                                         </constraints>
                                     </view>
                                     <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dMw-pv-JpB">
-                                        <rect key="frame" x="0.0" y="239" width="414" height="535"/>
+                                        <rect key="frame" x="0.0" y="239" width="414" height="579"/>
                                         <wkWebViewConfiguration key="configuration">
                                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                             <wkPreferences key="preferences"/>

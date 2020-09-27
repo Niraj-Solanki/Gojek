@@ -10,16 +10,11 @@ import UIKit
 class HomeViewModel : NSObject{
     
     var observerBlock:((_ observerType:ObserverTypeEnum)->Void)?
-    private var repositories:[RepositoryModel]? {
-        didSet{
-            observerBlock?(.dataLoaded)
-        }
-    }
-    
+    private var repositories:[RepositoryModel]?
     private var isApiRunning = false
     
     var nib:UINib{
-     return UINib.init(nibName: "RepoTableCell", bundle: nil)
+        return UINib.init(nibName: "RepoTableCell", bundle: nil)
     }
     
     var reusableIdentifier:String{
@@ -33,9 +28,15 @@ class HomeViewModel : NSObject{
         else
         {
             // Fetch from CoreData
-            repoAPI()
+             repositories = fetchDataFromStore()
+            if let repositories = repositories, repositories.count > 0 {
+                return repositories
+            }
+            else
+            {
+                repoAPI()
+            }
         }
-        
         return []
     }
     
@@ -43,12 +44,30 @@ class HomeViewModel : NSObject{
         return NSAttributedString(string: "Pull to refresh")
     }
     
+    
+    private func fetchDataFromStore() ->[RepositoryModel] {
+        do {
+            return try DataManager().fetchRepositories()
+        } catch  {
+            print("Can't Fetch")
+            return []
+        }
+    }
+    
+    private func saveDataInStore(repositories:[RepositoryModel]) {
+        do {
+            try DataManager().insertRepositories(repositories: repositories)
+        } catch  {
+            print("Can't Store")
+        }
+    }
+    
     func forceUpdate() {
         repoAPI()
     }
     
     //MARK:- API Work
-    func repoAPI() {
+    private func repoAPI() {
         
         if isApiRunning {
             return
@@ -64,7 +83,10 @@ class HomeViewModel : NSObject{
                 
                 let jsonDecoder = JSONDecoder()
                 do {
-                    self?.repositories = try jsonDecoder.decode([RepositoryModel].self, from: data)
+                    let repositoriesData = try jsonDecoder.decode([RepositoryModel].self, from: data)
+                    self?.repositories = repositoriesData
+                    self?.saveDataInStore(repositories: repositoriesData)
+                    self?.observerBlock?(.dataLoaded)
                 } catch {
                     print(error.localizedDescription)
                     self?.observerBlock?(.dataFailed)
