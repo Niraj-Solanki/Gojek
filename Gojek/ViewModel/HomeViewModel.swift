@@ -34,7 +34,7 @@ class HomeViewModel : NSObject{
             }
             else
             {
-                repoAPI()
+                forceUpdate()
             }
         }
         return []
@@ -63,43 +63,40 @@ class HomeViewModel : NSObject{
     }
     
     func forceUpdate() {
-        repoAPI()
+        getTrendingRepositories()
     }
     
     //MARK:- API Work
-    private func repoAPI() {
+   private func getTrendingRepositories() {
+    if isApiRunning {
+        return
+    }
+    
+    HTTPClient.shared.dataTask(GitRepositories.trendingRepositories) { [weak self] (result) in
+            self?.isApiRunning = false
         
-        if isApiRunning {
-            return
-        }
-        
-        let urlString = "https://ghapi.huchen.dev/repositories"
-        if let url = URL.init(string: urlString) {
-            observerBlock?(.dataLoading)
-            isApiRunning = true
-            let downloadTask = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
-                self?.isApiRunning = false
-                
-                if error != nil
-                {
-                    self?.observerBlock?(.dataFailed)
-                    return
-                }
-                
-                guard let data = data else { self?.observerBlock?(.dataFailed); return }
+            guard let self = self else {
+                return
+            }
+            
+            switch result {
+            case .success(let data):
+                guard let data = data else { self.observerBlock?(.dataFailed); return }
                 
                 let jsonDecoder = JSONDecoder()
                 do {
                     let repositoriesData = try jsonDecoder.decode([RepositoryModel].self, from: data)
-                    self?.repositories = repositoriesData
-                    self?.saveDataInStore(repositories: repositoriesData)
-                    self?.observerBlock?(.dataLoaded)
+                    self.repositories = repositoriesData
+                    self.saveDataInStore(repositories: repositoriesData)
+                    self.observerBlock?(.dataLoaded)
                 } catch {
                     print(error.localizedDescription)
-                    self?.observerBlock?(.dataFailed)
+                    self.observerBlock?(.dataFailed)
                 }
+                
+            case .failure( _):
+                self.observerBlock?(.dataFailed)
             }
-            downloadTask.resume()
         }
     }
 }
