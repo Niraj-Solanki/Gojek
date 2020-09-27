@@ -11,6 +11,8 @@ import UIKit
 class HomeViewController: UIViewController {
     
     // MARK: - Outlets
+    @IBOutlet weak var noConnectionView: UIView!
+    @IBOutlet weak var retryButton: UIButton!
     @IBOutlet weak var repoTableView: UITableView!
     
     // MARK: - Objetcs
@@ -31,6 +33,8 @@ class HomeViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         repoTableView.refreshControl = refreshControl
         
+        retryButton.layer.borderColor = #colorLiteral(red: 0.3607843137, green: 0.6862745098, blue: 0.3921568627, alpha: 1)
+        retryButton.layer.borderWidth = 1
         bindingSetup()
     }
      
@@ -46,13 +50,23 @@ class HomeViewController: UIViewController {
                 DispatchQueue.main.async {
                     self?.refreshControl.endRefreshing()
                     self?.repoTableView.reloadData()
+                    self?.noConnectionView.isHidden = true
                 }
             case .dataFailed:
                 print("Data Failed")
+                DispatchQueue.main.async {
+                self?.refreshControl.endRefreshing()
+                    self?.noConnectionView.isHidden = false
+                }
             default:
                 print("Default")
             }
         }
+    }
+    
+    //MARK:- Action Methods
+    @IBAction func retryAction(_ sender: UIButton) {
+        viewModel.forceUpdate()
     }
     
 }

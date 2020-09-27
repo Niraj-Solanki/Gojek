@@ -79,6 +79,13 @@ class HomeViewModel : NSObject{
             isApiRunning = true
             let downloadTask = URLSession.shared.dataTask(with: url) { [weak self] (data, response, error) in
                 self?.isApiRunning = false
+                
+                if error != nil
+                {
+                    self?.observerBlock?(.dataFailed)
+                    return
+                }
+                
                 guard let data = data else { self?.observerBlock?(.dataFailed); return }
                 
                 let jsonDecoder = JSONDecoder()
