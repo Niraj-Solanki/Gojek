@@ -40,6 +40,8 @@
 		49832C2F2521005F0037218B /* GitRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C2E2521005F0037218B /* GitRepositories.swift */; };
 		49832C312521A1580037218B /* HomeControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C302521A1580037218B /* HomeControllerUITest.swift */; };
 		49832C362521D0A60037218B /* HomeVCUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C352521D0A60037218B /* HomeVCUnitTest.swift */; };
+		49832C382521E43B0037218B /* RepositoryDetailTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C372521E43B0037218B /* RepositoryDetailTest.swift */; };
+		49832C3A2521E5C30037218B /* RepositoryDetailUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C392521E5C30037218B /* RepositoryDetailUITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,8 @@
 		49832C2E2521005F0037218B /* GitRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositories.swift; sourceTree = "<group>"; };
 		49832C302521A1580037218B /* HomeControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerUITest.swift; sourceTree = "<group>"; };
 		49832C352521D0A60037218B /* HomeVCUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCUnitTest.swift; sourceTree = "<group>"; };
+		49832C372521E43B0037218B /* RepositoryDetailTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailTest.swift; sourceTree = "<group>"; };
+		49832C392521E5C30037218B /* RepositoryDetailUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailUITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 				496716E4251DCFEF00DC4F42 /* GojekTests.swift */,
 				496716E6251DCFEF00DC4F42 /* Info.plist */,
 				49832C352521D0A60037218B /* HomeVCUnitTest.swift */,
+				49832C372521E43B0037218B /* RepositoryDetailTest.swift */,
 			);
 			path = GojekTests;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				49832C302521A1580037218B /* HomeControllerUITest.swift */,
 				496716EF251DCFEF00DC4F42 /* GojekUITests.swift */,
 				496716F1251DCFEF00DC4F42 /* Info.plist */,
+				49832C392521E5C30037218B /* RepositoryDetailUITest.swift */,
 			);
 			path = GojekUITests;
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				496716E5251DCFEF00DC4F42 /* GojekTests.swift in Sources */,
+				49832C382521E43B0037218B /* RepositoryDetailTest.swift in Sources */,
 				49832C362521D0A60037218B /* HomeVCUnitTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49832C3A2521E5C30037218B /* RepositoryDetailUITest.swift in Sources */,
 				49832C312521A1580037218B /* HomeControllerUITest.swift in Sources */,
 				496716F0251DCFEF00DC4F42 /* GojekUITests.swift in Sources */,
 			);
