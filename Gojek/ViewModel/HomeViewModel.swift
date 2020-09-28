@@ -10,13 +10,28 @@ import UIKit
 class HomeViewModel : NSObject{
     
     var observerBlock:((_ observerType:ObserverTypeEnum)->Void)?
-    private var repositories:[RepositoryModel]?
+    private var repositories:[RepositoryModel] = []{
+        didSet{
+            observerBlock?(.dataLoaded)
+        }
+    }
+    
     private var isApiRunning = false
     private let loaderAlert = UIAlertController(title: nil, message: "Fetching Data...", preferredStyle: .alert)
     
     override init() {
         super.init()
         self.initializeLoader()
+        
+        //Fetch Data From Store
+        let repositoriesFromStore:[RepositoryModel] = fetchDataFromStore()
+        if repositoriesFromStore.count > 0 {
+            repositories = repositoriesFromStore
+        }
+        else
+        {
+            forceUpdate()
+        }
     }
     
     var nib:UINib{
@@ -27,23 +42,8 @@ class HomeViewModel : NSObject{
         return "RepoTableCell"
     }
     
-    var items:[RepositoryModel]{
-        if let repositories = repositories {
-            return repositories
-        }
-        else
-        {
-            // Fetch from CoreData
-             repositories = fetchDataFromStore()
-            if let repositories = repositories, repositories.count > 0 {
-                return repositories
-            }
-            else
-            {
-                forceUpdate()
-            }
-        }
-        return []
+    var items:[RepositoryModel] {
+        return repositories
     }
     
     var refreshTitle:NSAttributedString {
@@ -106,7 +106,6 @@ class HomeViewModel : NSObject{
                     let repositoriesData = try jsonDecoder.decode([RepositoryModel].self, from: data)
                     self.repositories = repositoriesData
                     self.saveDataInStore(repositories: repositoriesData)
-                    self.observerBlock?(.dataLoaded)
                 } catch {
                     print(error.localizedDescription)
                     self.observerBlock?(.dataFailed)

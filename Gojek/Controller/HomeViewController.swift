@@ -38,39 +38,38 @@ class HomeViewController: UIViewController {
         retryButton.layer.borderWidth = 1
         bindingSetup()
     }
-     
+    
     @objc func refresh(_ sender: AnyObject) {
-       // Code to refresh table view
+        // Code to refresh table view
         viewModel.forceUpdate()
     }
     
     func bindingSetup() {
         viewModel.observerBlock = {  [weak self] (state) in
-            switch state {
-            case .dataLoaded:
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                switch state {
+                case .dataLoaded:
+                    print("Data Loaded")
                     self?.refreshControl.endRefreshing()
                     self?.repoTableView.reloadData()
                     self?.noConnectionView.isHidden = true
                     self?.viewModel.getLoader().dismiss(animated: false, completion: nil)
-                }
-            case .dataFailed:
-                print("Data Failed")
-                DispatchQueue.main.async {
-                self?.refreshControl.endRefreshing()
+                    
+                case .dataFailed:
+                    print("Data Failed")
+                    self?.refreshControl.endRefreshing()
                     self?.noConnectionView.isHidden = false
                     self?.viewModel.getLoader().dismiss(animated: false, completion: nil)
-                }
-            case .dataLoading:
-                print("Data Loading")
-                DispatchQueue.main.async {
+                    
+                case .dataLoading:
+                    print("Data Loading")
                     if let loader = self?.viewModel.getLoader()
                     {
                         self?.present(loader, animated: false, completion: nil)
                     }
+                default:
+                    print("Default")
                 }
-            default:
-                print("Default")
             }
         }
     }
