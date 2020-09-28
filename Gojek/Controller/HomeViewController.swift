@@ -52,12 +52,22 @@ class HomeViewController: UIViewController {
                     self?.refreshControl.endRefreshing()
                     self?.repoTableView.reloadData()
                     self?.noConnectionView.isHidden = true
+                    self?.viewModel.getLoader().dismiss(animated: false, completion: nil)
                 }
             case .dataFailed:
                 print("Data Failed")
                 DispatchQueue.main.async {
                 self?.refreshControl.endRefreshing()
                     self?.noConnectionView.isHidden = false
+                    self?.viewModel.getLoader().dismiss(animated: false, completion: nil)
+                }
+            case .dataLoading:
+                print("Data Loading")
+                DispatchQueue.main.async {
+                    if let loader = self?.viewModel.getLoader()
+                    {
+                        self?.present(loader, animated: false, completion: nil)
+                    }
                 }
             default:
                 print("Default")

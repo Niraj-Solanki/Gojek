@@ -10,6 +10,6 @@ import Foundation
  struct Constants {
     struct Service {
         static let baseURL = "https://ghapi.huchen.dev/"
-        static let timeout: TimeInterval = 60.0
+        static let timeout: TimeInterval = 30.0
     }
 }

@@ -12,6 +12,12 @@ class HomeViewModel : NSObject{
     var observerBlock:((_ observerType:ObserverTypeEnum)->Void)?
     private var repositories:[RepositoryModel]?
     private var isApiRunning = false
+    private let loaderAlert = UIAlertController(title: nil, message: "Fetching Data...", preferredStyle: .alert)
+    
+    override init() {
+        super.init()
+        self.initializeLoader()
+    }
     
     var nib:UINib{
         return UINib.init(nibName: "RepoTableCell", bundle: nil)
@@ -66,12 +72,24 @@ class HomeViewModel : NSObject{
         getTrendingRepositories()
     }
     
+   private func initializeLoader() {
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+               loadingIndicator.hidesWhenStopped = true
+               loadingIndicator.style = UIActivityIndicatorView.Style.gray
+               loadingIndicator.startAnimating();
+               loaderAlert.view.addSubview(loadingIndicator)
+    }
+    
+    func getLoader() -> UIAlertController {
+        return loaderAlert
+    }
+    
     //MARK:- API Work
    private func getTrendingRepositories() {
     if isApiRunning {
         return
     }
-    
+     self.observerBlock?(.dataLoading)
     HTTPClient.shared.dataTask(GitRepositories.trendingRepositories) { [weak self] (result) in
             self?.isApiRunning = false
         
