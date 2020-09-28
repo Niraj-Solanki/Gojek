@@ -32,6 +32,7 @@ class HomeViewController: UIViewController {
         refreshControl.attributedTitle = viewModel.refreshTitle
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         repoTableView.refreshControl = refreshControl
+        repoTableView.accessibilityIdentifier = "RepoTableView"
         
         retryButton.layer.borderColor = #colorLiteral(red: 0.3607843137, green: 0.6862745098, blue: 0.3921568627, alpha: 1)
         retryButton.layer.borderWidth = 1
@@ -79,6 +80,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let repoCell = tableView.dequeueReusableCell(withIdentifier: viewModel.reusableIdentifier, for: indexPath) as! RepoTableCell
+        repoCell.accessibilityIdentifier = String(format: "\(viewModel.reusableIdentifier)_%ld_%ld", indexPath.section, indexPath.row)
         repoCell.configureCell(viewModel: RepoCellViewModel.init(model: viewModel.items[indexPath.row]))
         return repoCell
     }

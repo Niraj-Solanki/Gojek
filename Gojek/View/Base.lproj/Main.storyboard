@@ -81,6 +81,7 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="NoConnectonView"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="vfV-hx-uP6" secondAttribute="trailing" constant="10" id="0sq-Jt-IlO"/>
                                             <constraint firstItem="9Wo-t9-hj2" firstAttribute="leading" secondItem="oaT-xb-Bxi" secondAttribute="leading" constant="10" id="9Mk-3Y-DT8"/>

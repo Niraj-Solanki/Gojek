@@ -47,7 +47,7 @@ class HomeViewModel : NSObject{
     
     private func fetchDataFromStore() ->[RepositoryModel] {
         do {
-            return try DataManager().fetchRepositories()
+            return try DataManager.shared.fetchRepositories()
         } catch  {
             print("Can't Fetch")
             return []
@@ -56,7 +56,7 @@ class HomeViewModel : NSObject{
     
     private func saveDataInStore(repositories:[RepositoryModel]) {
         do {
-            try DataManager().insertRepositories(repositories: repositories)
+            try DataManager.shared.insertRepositories(repositories: repositories)
         } catch  {
             print("Can't Store")
         }

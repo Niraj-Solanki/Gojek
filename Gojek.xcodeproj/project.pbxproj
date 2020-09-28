@@ -15,11 +15,7 @@
 		496716E5251DCFEF00DC4F42 /* GojekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496716E4251DCFEF00DC4F42 /* GojekTests.swift */; };
 		496716F0251DCFEF00DC4F42 /* GojekUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496716EF251DCFEF00DC4F42 /* GojekUITests.swift */; };
 		49671702251E574100DC4F42 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671701251E574100DC4F42 /* HomeViewController.swift */; };
-		49671703251E574100DC4F42 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671701251E574100DC4F42 /* HomeViewController.swift */; };
-		49671704251E574100DC4F42 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671701251E574100DC4F42 /* HomeViewController.swift */; };
 		49671708251E5EA800DC4F42 /* RepoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671706251E5EA800DC4F42 /* RepoTableCell.swift */; };
-		49671709251E5EA800DC4F42 /* RepoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671706251E5EA800DC4F42 /* RepoTableCell.swift */; };
-		4967170A251E5EA800DC4F42 /* RepoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49671706251E5EA800DC4F42 /* RepoTableCell.swift */; };
 		4967170B251E5EA800DC4F42 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49671707251E5EA800DC4F42 /* RepoTableCell.xib */; };
 		4967170C251E5EA800DC4F42 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49671707251E5EA800DC4F42 /* RepoTableCell.xib */; };
 		4967170D251E5EA800DC4F42 /* RepoTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49671707251E5EA800DC4F42 /* RepoTableCell.xib */; };
@@ -42,6 +38,7 @@
 		49832C2A2520FEC20037218B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C292520FEC20037218B /* Extensions.swift */; };
 		49832C2C2520FF0B0037218B /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C2B2520FF0B0037218B /* ServerError.swift */; };
 		49832C2F2521005F0037218B /* GitRepositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C2E2521005F0037218B /* GitRepositories.swift */; };
+		49832C312521A1580037218B /* HomeControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49832C302521A1580037218B /* HomeControllerUITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +94,7 @@
 		49832C292520FEC20037218B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		49832C2B2520FF0B0037218B /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
 		49832C2E2521005F0037218B /* GitRepositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepositories.swift; sourceTree = "<group>"; };
+		49832C302521A1580037218B /* HomeControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeControllerUITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +178,7 @@
 		496716EE251DCFEF00DC4F42 /* GojekUITests */ = {
 			isa = PBXGroup;
 			children = (
+				49832C302521A1580037218B /* HomeControllerUITest.swift */,
 				496716EF251DCFEF00DC4F42 /* GojekUITests.swift */,
 				496716F1251DCFEF00DC4F42 /* Info.plist */,
 			);
@@ -450,8 +449,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				496716E5251DCFEF00DC4F42 /* GojekTests.swift in Sources */,
-				49671709251E5EA800DC4F42 /* RepoTableCell.swift in Sources */,
-				49671703251E574100DC4F42 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,9 +456,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49832C312521A1580037218B /* HomeControllerUITest.swift in Sources */,
 				496716F0251DCFEF00DC4F42 /* GojekUITests.swift in Sources */,
-				4967170A251E5EA800DC4F42 /* RepoTableCell.swift in Sources */,
-				49671704251E574100DC4F42 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

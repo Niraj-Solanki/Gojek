@@ -11,6 +11,9 @@ import CoreData
 
 class DataManager {
     
+   static let shared = DataManager()
+    private init() { }
+    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Gojek")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in

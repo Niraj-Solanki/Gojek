@@ -19,6 +19,7 @@ class RepoTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        nameLabel.accessibilityIdentifier = "RepoTableCell_Name"
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
